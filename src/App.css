@@ -1,4 +1,72 @@
 @import "tailwindcss";
+:root {
+  --froggert-width: 150px;
+
+  /* Light mode variables */
+  --bg-color-light: #f9fafb;
+  --text-color-light: #1f2937;
+  --social-icon-color-light: #4b5563;
+  --copyright-color-light: #6b7280;
+
+  /* Dark mode variables */
+  --bg-color-dark: #111827;
+  --text-color-dark: #f3f4f6;
+  --social-icon-color-dark: #e5e7eb;
+  --copyright-color-dark: #d1d5db;
+}
+
+/* Base styles */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Container styles */
+.app-container-light {
+  min-height: 100vh;
+  background-color: var(--bg-color-light);
+  color: var(--text-color-light);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.app-container-dark {
+  min-height: 100vh;
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Social icon styles */
+.social-icon-light {
+  color: var(--social-icon-color-light);
+  max-width: 100%;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.05));
+}
+
+.social-icon-dark {
+  color: var(--social-icon-color-dark);
+  max-width: 100%;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.1));
+}
+
+/* Copyright text styles */
+.copyright-light {
+  color: var(--copyright-color-light);
+}
+
+.copyright-dark {
+  color: var(--copyright-color-dark);
+}
+
+/* Animation */
+.bobbing {
+  animation: bobbing 3s ease-in-out infinite;
+}
 
 @keyframes bobbing {
   0%,
@@ -6,10 +74,6 @@
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-5%);
+    transform: translateY(-10px);
   }
-}
-
-.bobbing {
-  animation: bobbing 2s ease-in-out infinite;
 }
