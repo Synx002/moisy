@@ -1,1 +1,15 @@
 @import "tailwindcss";
+
+@keyframes bobbing {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5%);
+  }
+}
+
+.bobbing {
+  animation: bobbing 2s ease-in-out infinite;
+}

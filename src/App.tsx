@@ -1,6 +1,7 @@
 import "./App.css";
 import Wave from "react-wavify";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           </linearGradient>
         </defs>
       </Wave>
+      <Footer />
     </>
   );
 }
