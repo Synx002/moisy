@@ -13,6 +13,9 @@
   --text-color-dark: #f3f4f6;
   --social-icon-color-dark: #e5e7eb;
   --copyright-color-dark: #d1d5db;
+
+  --window-width: clamp(40rem, calc(50vw + 5rem), 50rem);
+  --window-height: clamp(25rem, calc(50vh + 5rem), 35rem);
 }
 
 /* Base styles */

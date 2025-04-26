@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FiInstagram } from "react-icons/fi";
 import useSound from "use-sound";
@@ -8,26 +8,29 @@ import backgroundMusic from "../assets/sounds/bgm.mp3";
 
 const Footer: React.FC = () => {
   const { darkMode } = useContext(ThemeContext);
-  const { soundEnabled, toggleSound } = useContext(SoundContext);
+  const { soundEnabled } = useContext(SoundContext);
 
-  const [play, { sound }] = useSound(backgroundMusic, {
-    volume: 0.1,
+  // State lokal untuk mengontrol background music
+  const [musicEnabled, setMusicEnabled] = useState(false);
+
+  const [play, { stop }] = useSound(backgroundMusic, {
+    volume: 1,
     loop: true,
   });
 
   const handleBackgroundMusic = () => {
-    if (!soundEnabled) {
+    if (musicEnabled) {
       // Stop BGM kalau sedang menyala
-      if (sound) {
-        sound.stop();
-      }
+      stop();
     } else {
       // Play BGM kalau belum menyala
       play();
     }
 
-    toggleSound();
+    // Update state lokal, bukan context
+    setMusicEnabled(!musicEnabled);
   };
+
   return (
     <>
       <footer className="fixed pointer-events-none bottom-0 w-screen h-screen z-0 md:z-10 flex flex-col items-center">
@@ -39,7 +42,7 @@ const Footer: React.FC = () => {
               aria-label="Toggle background music"
             >
               {darkMode ? (
-                soundEnabled ? (
+                musicEnabled ? (
                   <img
                     src="https://www.sharyap.com/_next/image?url=%2Fimages%2Fplayer%2Ffroggert_stop_dark.webp&w=640&q=75"
                     alt="froggert stop dark"
@@ -58,7 +61,7 @@ const Footer: React.FC = () => {
                     height={150}
                   />
                 )
-              ) : soundEnabled ? (
+              ) : musicEnabled ? (
                 <img
                   src="https://www.sharyap.com/_next/image?url=%2Fimages%2Fplayer%2Ffroggert_stop.webp&w=1080&q=75"
                   alt="froggert stop"

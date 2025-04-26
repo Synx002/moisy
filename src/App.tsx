@@ -3,6 +3,7 @@ import "./App.css";
 import Wave from "react-wavify";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import Home from "./components/Home";
 import { ThemeContext, ThemeProvider } from "./context/ThemeContext";
 import { SoundContext, SoundProvider } from "./context/SoundContext";
 import useSound from "use-sound";
@@ -38,6 +39,7 @@ const ThemedApp: React.FC = () => {
   return (
     <div className={darkMode ? "app-container-dark" : "app-container-light"}>
       <Navbar />
+      <Home />
       <Wave
         fill="url(#gradient)"
         paused={false}
