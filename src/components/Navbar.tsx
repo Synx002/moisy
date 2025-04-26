@@ -85,10 +85,32 @@ const Navbar: React.FC = () => {
             onClick={handleSoundToggle}
             aria-label="Toggle sound"
           >
-            {soundEnabled ? (
+            {darkMode ? (
+              // Dark mode images
+              soundEnabled ? (
+                <img
+                  src="https://www.sharyap.com/_next/image?url=%2Fimages%2Fsfx_on_dark.webp&w=96&q=75"
+                  alt="sound on toggle dark mode"
+                  draggable="false"
+                  loading="lazy"
+                  width={40}
+                  height={40}
+                />
+              ) : (
+                <img
+                  src="https://www.sharyap.com/_next/image?url=%2Fimages%2Fsfx_off_dark.webp&w=96&q=75"
+                  alt="sound off toggle dark mode"
+                  draggable="false"
+                  loading="lazy"
+                  width={40}
+                  height={40}
+                />
+              )
+            ) : // Light mode images
+            soundEnabled ? (
               <img
                 src="https://www.sharyap.com/_next/image?url=%2Fimages%2Fsfx_on_light.webp&w=96&q=75"
-                alt="sound on toggle"
+                alt="sound on toggle light mode"
                 draggable="false"
                 loading="lazy"
                 width={40}
@@ -97,7 +119,7 @@ const Navbar: React.FC = () => {
             ) : (
               <img
                 src="https://www.sharyap.com/_next/image?url=%2Fimages%2Fsfx_off_light.webp&w=96&q=75"
-                alt="sound off toggle"
+                alt="sound off toggle light mode"
                 draggable="false"
                 loading="lazy"
                 width={40}
