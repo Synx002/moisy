@@ -9,7 +9,7 @@
   --copyright-color-light: #6b7280;
 
   /* Dark mode variables */
-  --bg-color-dark: #111827;
+  --bg-color-dark: #171717;
   --text-color-dark: #f3f4f6;
   --social-icon-color-dark: #e5e7eb;
   --copyright-color-dark: #d1d5db;
@@ -27,6 +27,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.font-roboto-mono {
+  font-family: "Roboto Mono", monospace;
+}
+.font-zen-kaku {
+  font-family: "Zen Kaku Gothic New", sans-serif;
 }
 
 /* Container styles */
