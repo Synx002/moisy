@@ -16,6 +16,9 @@
 
   --window-width: clamp(40rem, calc(50vw + 5rem), 50rem);
   --window-height: clamp(25rem, calc(50vh + 5rem), 35rem);
+  --avatar-width: clamp(10rem, calc(9vh + 4rem), 20rem);
+  --name-size: clamp(2rem, calc(2.1vw + 1rem), 3rem);
+  --translate: translate(-50%, -60%);
 }
 
 /* Base styles */
