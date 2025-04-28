@@ -12,7 +12,7 @@ const AboutModal: React.FC<AboutModalProps> = ({
   onClose,
   darkMode,
 }) => {
-  const nodeRef = useRef(null);
+  const nodeRef = useRef<HTMLDivElement>(null) as React.RefObject<HTMLElement>;
 
   if (!isOpen) return null;
 
@@ -23,7 +23,10 @@ const AboutModal: React.FC<AboutModalProps> = ({
         handle=".modal-handle"
         defaultPosition={{ x: 0, y: 0 }}
       >
-        <div ref={nodeRef} className="w-[700px] shadow-lg overflow-hidden">
+        <div
+          ref={nodeRef as React.RefObject<HTMLDivElement>}
+          className="w-[700px] shadow-lg overflow-hidden"
+        >
           {/* Header bar */}
           <div
             className={`modal-handle flex justify-between items-center px-6 py-3 cursor-move text-white rounded-t-lg ${
