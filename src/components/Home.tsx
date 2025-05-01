@@ -1,10 +1,12 @@
 import { useContext, useState } from "react";
 import AboutModal from "../components/modal/about";
+import LinksModal from "../components/modal/links";
 import { ThemeContext } from "../context/ThemeContext";
 
 const Home = () => {
   const { darkMode } = useContext(ThemeContext);
   const [isAboutModalOpen, setIsAboutModalOpen] = useState(false);
+  const [isLinksModalOpen, setIsLinksModalOpen] = useState(false);
 
   return (
     <div className="flex flex-col justify-center items-center ">
@@ -75,7 +77,7 @@ const Home = () => {
             {/* Links */}
             <div
               className="flex flex-col items-center duration-250 cursor-pointer hover:scale-105 active:scale-90"
-              onClick={() => setIsAboutModalOpen(true)}
+              onClick={() => setIsLinksModalOpen(true)}
             >
               <img
                 src={
@@ -160,6 +162,11 @@ const Home = () => {
       <AboutModal
         isOpen={isAboutModalOpen}
         onClose={() => setIsAboutModalOpen(false)}
+        darkMode={darkMode}
+      />
+      <LinksModal
+        isOpen={isLinksModalOpen}
+        onClose={() => setIsLinksModalOpen(false)}
         darkMode={darkMode}
       />
     </div>
