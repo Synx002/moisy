@@ -43,22 +43,50 @@ const WorkModal: React.FC<WorkModalProps> = ({ isOpen, onClose, darkMode }) => {
     description: string;
     extraInfo: string;
     imageUrl: string;
-    downloadUrl: string;
-    learnMoreUrl: string;
+    webUrl: string;
   }
 
   const projects: Project[] = [
     {
-      title: "Frog Pond",
+      title: "Tekadverse",
       description:
-        "i really love virtual pets and desktop buddies, so i made this idle desktop pond full of my little frog characters :)",
+        "my sibling had this awesome idea for a digital comic agency, so naturally i got roped into building the website 😅 now it’s live and full of artsy comic energy!",
       extraInfo:
-        "all programming/art work done on this one is by me! free and available to download on itch.io, and soon to be released on Steam.",
-      imageUrl: "/images/frog-pond.png", // Ganti dengan path aktual
-      downloadUrl: "https://example.com/download",
-      learnMoreUrl: "https://example.com/how-i-made-it",
+        "all the web dev magic (aka: coding, debugging, crying at 2am) was done by me! super proud of how it turned out 💻✨.",
+      imageUrl:
+        "https://www.sharyap.com/_next/image?url=%2Fimages%2FdevProjects%2Fcover.webp&w=640&q=75", // Ganti dengan path aktual
+      webUrl: "https://synx002.github.io/tekadverse-2024/",
     },
-    // Tambahkan project lain dengan struktur serupa
+    {
+      title: "My Tax Indonesia",
+      description:
+        "my very first job experience! i didn’t build the whole thing, but i do keep the website alive and looking fresh ✨ mostly handling UI stuff and squashing bugs before they bite 🐛💥",
+      extraInfo:
+        "this is where i learned the joys of ‘maintenance mode’—aka reading someone else’s code and trying not to cry. UI updates? done. weird layout bugs? also done. proud to be part of it!",
+      imageUrl:
+        "https://www.sharyap.com/_next/image?url=%2Fimages%2FdevProjects%2Fcover.webp&w=640&q=75",
+      webUrl: "https://mytax.co.id/",
+    },
+    {
+      title: "Daikh & Co",
+      description:
+        "started with a template, gave it a glow-up ✨ helped build and update the UI for this stylish site—now it looks way cooler than it did before 😎",
+      extraInfo:
+        "no shame in the template game! i tweaked, tuned, and transformed the design to match the brand's vibe. lots of UI polishing, color picking, and the occasional css battle 💅💻",
+      imageUrl:
+        "https://www.sharyap.com/_next/image?url=%2Fimages%2FdevProjects%2Fcover.webp&w=640&q=75",
+      webUrl: "https://daikhnco.com/",
+    },
+    {
+      title: "Kabo",
+      description:
+        "my very first freelance gig! built it with WordPress + sprinkled in some GSAP magic for smooth animations ✨ it used to look super slick... until they changed the UI 😢",
+      extraInfo:
+        "i was in charge of the full setup and animation work—learned a lot about client work, WordPress quirks, and how to make things move nicely on scroll. it’s changed since, but hey, it was mine once!",
+      imageUrl:
+        "https://www.sharyap.com/_next/image?url=%2Fimages%2FdevProjects%2Fcover.webp&w=640&q=75",
+      webUrl: "https://kabo.id/",
+    },
   ];
 
   if (!isOpen) return null;
@@ -72,7 +100,7 @@ const WorkModal: React.FC<WorkModalProps> = ({ isOpen, onClose, darkMode }) => {
       >
         <div
           ref={nodeRef as React.RefObject<HTMLDivElement>}
-          className="w-[700px] shadow-lg overflow-hidden"
+          className="w-[800px] shadow-lg overflow-hidden"
         >
           {/* Header bar */}
           <div
@@ -163,7 +191,7 @@ const WorkModal: React.FC<WorkModalProps> = ({ isOpen, onClose, darkMode }) => {
                 {projects.map((project, index) => (
                   <div
                     key={index}
-                    className="flex flex-col md:flex-row gap-6 items-start"
+                    className="flex flex-col md:flex-row gap-6 pb-5 items-start border-b-2 border-[#f5f5f5]"
                   >
                     {/* Gambar project */}
                     <div className="flex-shrink-0">
@@ -186,26 +214,15 @@ const WorkModal: React.FC<WorkModalProps> = ({ isOpen, onClose, darkMode }) => {
                         <p className="mt-2 text-sm md:text-base">
                           {project.extraInfo}
                         </p>
-                        <p className="mt-2 text-sm md:text-base">
-                          see how i made it{" "}
-                          <a
-                            href={project.learnMoreUrl}
-                            target="_blank"
-                            className="text-amber-600 underline"
-                          >
-                            here
-                          </a>
-                          !
-                        </p>
                       </div>
 
                       <div className="mt-4">
                         <a
-                          href={project.downloadUrl}
+                          href={project.webUrl}
                           target="_blank"
                           className="bg-amber-100 text-amber-600 px-4 py-2 rounded font-semibold text-sm hover:bg-amber-200"
                         >
-                          download page
+                          visit
                         </a>
                       </div>
                     </div>
