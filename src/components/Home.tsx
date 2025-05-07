@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import AboutModal from "../components/modal/about";
 import LinksModal from "../components/modal/links";
 import WorksModal from "../components/modal/Works";
+import FAQModal from "../components/modal/Faq";
 import { ThemeContext } from "../context/ThemeContext";
 
 const Home = () => {
@@ -9,6 +10,7 @@ const Home = () => {
   const [isAboutModalOpen, setIsAboutModalOpen] = useState(false);
   const [isLinksModalOpen, setIsLinksModalOpen] = useState(false);
   const [isWorksModalOpen, setIsWorksModalOpen] = useState(false);
+  const [isFAQModalOpen, setIsFAQModalOpen] = useState(false);
 
   return (
     <div className="flex flex-col justify-center items-center ">
@@ -123,7 +125,10 @@ const Home = () => {
             </div>
 
             {/* FAQ */}
-            <div className="flex flex-col items-center duration-250 cursor-pointer hover:scale-105 active:scale-90">
+            <div
+              className="flex flex-col items-center duration-250 cursor-pointer hover:scale-105 active:scale-90"
+              onClick={() => setIsFAQModalOpen(true)}
+            >
               <img
                 src={
                   darkMode
@@ -177,6 +182,11 @@ const Home = () => {
       <WorksModal
         isOpen={isWorksModalOpen}
         onClose={() => setIsWorksModalOpen(false)}
+        darkMode={darkMode}
+      />
+      <FAQModal
+        isOpen={isFAQModalOpen}
+        onClose={() => setIsFAQModalOpen(false)}
         darkMode={darkMode}
       />
     </div>
