@@ -111,10 +111,10 @@ const LinksModal: React.FC<LinksModalProps> = ({
               darkMode ? "bg-[#171717] border-2 border-b-0" : "bg-[#424242]"
             }`}
           >
-            <span className="text-xl ml-2 font-mono">links</span>
+            <span className="text-xl ml-2 font-robot-mono">links</span>
             <button
               onClick={onClose}
-              className="font-mono flex items-center justify-center text-white text-base
+              className="font-robot-mono flex items-center justify-center text-white text-base
               duration-100 hover:scale-110 active:scale-80 z-10"
             >
               [x]
@@ -142,7 +142,7 @@ const LinksModal: React.FC<LinksModalProps> = ({
                   <div className="mb-2">
                     {darkMode ? link.darkIcon : link.icon}
                   </div>
-                  <span className="text-base font-mono font-bold">
+                  <span className="text-base font-robot-mono font-bold">
                     {link.name}
                   </span>
                 </a>

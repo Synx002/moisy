@@ -104,14 +104,14 @@ const WorkModal: React.FC<WorkModalProps> = ({ isOpen, onClose, darkMode }) => {
         >
           {/* Header bar */}
           <div
-            className={`modal-handle flex justify-between items-center px-4 py-2 cursor-move text-white rounded-t-lg ${
+            className={`modal-handle flex justify-between items-center px-6 py-3 cursor-move text-white rounded-t-lg ${
               darkMode ? "bg-[#171717] border-2 border-b-0" : "bg-[#424242]"
             }`}
           >
-            <span className="text-xl ml-2 font-mono">work</span>
+            <span className="text-xl ml-2 font-roboto-mono">work</span>
             <button
               onClick={onClose}
-              className="font-mono flex items-center justify-center text-white text-base
+              className="font-roboto-mono flex items-center justify-center text-white text-base
               duration-100 hover:scale-110 active:scale-80 z-10"
             >
               [x]
@@ -141,7 +141,7 @@ const WorkModal: React.FC<WorkModalProps> = ({ isOpen, onClose, darkMode }) => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Development column */}
               <div>
-                <h2 className="text-xl font-mono uppercase mb-4 font-bold">
+                <h2 className="text-xl font-roboto-mono uppercase mb-4 font-bold">
                   Development
                 </h2>
                 <div className="flex flex-wrap gap-2">
@@ -162,7 +162,7 @@ const WorkModal: React.FC<WorkModalProps> = ({ isOpen, onClose, darkMode }) => {
 
               {/* Tools column */}
               <div>
-                <h2 className="text-xl font-mono uppercase mb-4 font-bold">
+                <h2 className="text-xl font-roboto-mono uppercase mb-4 font-bold">
                   Tools
                 </h2>
                 <div className="flex flex-wrap gap-2">
@@ -184,7 +184,7 @@ const WorkModal: React.FC<WorkModalProps> = ({ isOpen, onClose, darkMode }) => {
 
             {/* Project Showcase section */}
             <div className="mt-8">
-              <h2 className="text-xl font-mono uppercase mb-4 font-bold">
+              <h2 className="text-xl font-roboto-mono uppercase mb-4 font-bold">
                 Projects
               </h2>
               <div className="flex flex-col gap-8">

@@ -1,8 +1,9 @@
 import { useContext, useState } from "react";
-import AboutModal from "../components/modal/about";
-import LinksModal from "../components/modal/links";
+import AboutModal from "../components/modal/About";
+import LinksModal from "../components/modal/Links";
 import WorksModal from "../components/modal/Works";
 import FAQModal from "../components/modal/Faq";
+import ContactModal from "../components/modal/Contact";
 import { ThemeContext } from "../context/ThemeContext";
 
 const Home = () => {
@@ -11,12 +12,13 @@ const Home = () => {
   const [isLinksModalOpen, setIsLinksModalOpen] = useState(false);
   const [isWorksModalOpen, setIsWorksModalOpen] = useState(false);
   const [isFAQModalOpen, setIsFAQModalOpen] = useState(false);
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
   return (
     <div className="flex flex-col justify-center items-center ">
       {/* Header */}
       <div
-        className={`text-white font-mono text-xl px-6 py-3 rounded-t-lg w-full max-w-3xl mt-10 ${
+        className={`text-white font-roboto-mono text-xl px-6 py-3 rounded-t-lg w-full max-w-3xl mt-10 ${
           darkMode
             ? "bg-[#171717] border-2 border-b-0 border-[#fff]"
             : "bg-[#424242]"
@@ -148,7 +150,10 @@ const Home = () => {
             </div>
 
             {/* Contact */}
-            <div className="flex flex-col items-center duration-250 cursor-pointer hover:scale-105 active:scale-90">
+            <div
+              className="flex flex-col items-center duration-250 cursor-pointer hover:scale-105 active:scale-90"
+              onClick={() => setIsContactModalOpen(true)}
+            >
               <img
                 src={
                   darkMode
@@ -187,6 +192,11 @@ const Home = () => {
       <FAQModal
         isOpen={isFAQModalOpen}
         onClose={() => setIsFAQModalOpen(false)}
+        darkMode={darkMode}
+      />
+      <ContactModal
+        isOpen={isContactModalOpen}
+        onClose={() => setIsContactModalOpen(false)}
         darkMode={darkMode}
       />
     </div>

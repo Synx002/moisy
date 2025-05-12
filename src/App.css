@@ -39,6 +39,10 @@ body {
   font-family: "Zen Kaku Gothic New", sans-serif;
 }
 
+.text-primary {
+  color: #f59300;
+}
+
 /* Container styles */
 .app-container-light {
   min-height: 100vh;

@@ -33,10 +33,10 @@ const AboutModal: React.FC<AboutModalProps> = ({
               darkMode ? "bg-[#171717] border-2 border-b-0" : "bg-[#424242]"
             }`}
           >
-            <span className="text-xl ml-2 font-mono">about</span>
+            <span className="text-xl ml-2 font-roboto-mono">about</span>
             <button
               onClick={onClose}
-              className="absolute font-mono flex items-center justify-center text-white text-xl right-0 mr-6 py-3 
+              className="absolute font-roboto-mono flex items-center justify-center text-white text-xl right-0 mr-6 py-3 
     duration-100 hover:scale-110 active:scale-80 z-10"
             >
               [x]
@@ -97,7 +97,7 @@ const AboutModal: React.FC<AboutModalProps> = ({
                 ! :)
               </p>
 
-              <span className="font-mono font-semibold text-xl md:text-2xl">
+              <span className="font-roboto-mono font-semibold text-xl md:text-2xl">
                 EDUCATION
               </span>
               <br />
@@ -111,7 +111,7 @@ const AboutModal: React.FC<AboutModalProps> = ({
               </div>
               <br />
 
-              <span className="font-mono font-semibold text-xl md:text-2xl">
+              <span className="font-roboto-mono font-semibold text-xl md:text-2xl">
                 OTHER INTEREST
               </span>
               <ul className="mt-2 pl-6 list-disc">
@@ -122,7 +122,7 @@ const AboutModal: React.FC<AboutModalProps> = ({
               </ul>
               <br />
 
-              <span className="font-mono font-semibold text-xl md:text-2xl">
+              <span className="font-roboto-mono font-semibold text-xl md:text-2xl">
                 LANGUAGE PROFICIENCY
               </span>
               <div className="my-2 border-l-4 pl-3 border-[#f5f5f5]">
