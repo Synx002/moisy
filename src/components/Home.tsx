@@ -14,6 +14,60 @@ const Home = () => {
   const [isFAQModalOpen, setIsFAQModalOpen] = useState(false);
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
+  // Icon buttons configuration
+  const iconButtons = [
+    {
+      id: "about",
+      label: "about",
+      alt: "About",
+      darkIcon:
+        "https://www.sharyap.com/_next/image?url=%2Fimages%2Ficon_about_dark.webp&w=128&q=75",
+      lightIcon:
+        "https://www.sharyap.com/_next/image?url=%2Fimages%2Ficon_about.webp&w=128&q=75",
+      onClick: () => setIsAboutModalOpen(true),
+    },
+    {
+      id: "links",
+      label: "links",
+      alt: "Links",
+      darkIcon:
+        "https://www.sharyap.com/_next/image?url=%2Fimages%2Ficon_links_dark.webp&w=128&q=75",
+      lightIcon:
+        "https://www.sharyap.com/_next/image?url=%2Fimages%2Ficon_links.webp&w=128&q=75",
+      onClick: () => setIsLinksModalOpen(true),
+    },
+    {
+      id: "work",
+      label: "work",
+      alt: "Work",
+      darkIcon:
+        "https://www.sharyap.com/_next/image?url=%2Fimages%2Ficon_work_dark.webp&w=128&q=75",
+      lightIcon:
+        "https://www.sharyap.com/_next/image?url=%2Fimages%2Ficon_work.webp&w=128&q=75",
+      onClick: () => setIsWorksModalOpen(true),
+    },
+    {
+      id: "faq",
+      label: "faq",
+      alt: "FAQ",
+      darkIcon:
+        "https://www.sharyap.com/_next/image?url=%2Fimages%2Ficon_faq_dark.webp&w=128&q=75",
+      lightIcon:
+        "https://www.sharyap.com/_next/image?url=%2Fimages%2Ficon_faq.webp&w=128&q=75",
+      onClick: () => setIsFAQModalOpen(true),
+    },
+    {
+      id: "contact",
+      label: "contact",
+      alt: "Contact",
+      darkIcon:
+        "https://www.sharyap.com/_next/image?url=%2Fimages%2Ficon_contact_dark.webp&w=128&q=75",
+      lightIcon:
+        "https://www.sharyap.com/_next/image?url=%2Fimages%2Ficon_contact.webp&w=128&q=75",
+      onClick: () => setIsContactModalOpen(true),
+    },
+  ];
+
   return (
     <div className="flex flex-col justify-center items-center ">
       {/* Header */}
@@ -44,136 +98,44 @@ const Home = () => {
                 darkMode ? "text-[#c0faff]" : "text-[#f59300]"
               }`}
             >
-              i’m Syam
+              i'm Syam
             </span>
           </h1>
           <p
-            className={`font-body mb-20 text-center font-zen-kaku text-2xl ${
+            className={`font-body mb-20 text-+ font-zen-kaku text-2xl ${
               darkMode ? "text-[#fff]" : "text-[#424242]"
             }`}
           >
-            illustrator, animator, and developer
+            Junior Web Developer
           </p>
 
-          {/* Icon buttons */}
+          {/* Icon buttons - refactored */}
           <div className="flex flex-wrap justify-center gap-8 font-roboto-mono font-bold">
-            {/* About */}
-            <div
-              className="flex flex-col items-center duration-250 cursor-pointer hover:scale-105 active:scale-90"
-              onClick={() => setIsAboutModalOpen(true)}
-            >
-              <img
-                src={
-                  darkMode
-                    ? "https://www.sharyap.com/_next/image?url=%2Fimages%2Ficon_about_dark.webp&w=128&q=75"
-                    : "https://www.sharyap.com/_next/image?url=%2Fimages%2Ficon_about.webp&w=128&q=75"
-                }
-                alt="About"
-                className="w-16 h-16 drop-shadow-[0_5px_0_rgba(0,0,0,0.2)]"
-              />
-              <span
-                className={`mt-1  font-body text-base ${
-                  darkMode ? "text-[#fff]" : "text-[#424242]"
-                }`}
+            {iconButtons.map((button) => (
+              <div
+                key={button.id}
+                className="flex flex-col items-center duration-250 cursor-pointer hover:scale-105 active:scale-90"
+                onClick={button.onClick}
               >
-                about
-              </span>
-            </div>
-
-            {/* Links */}
-            <div
-              className="flex flex-col items-center duration-250 cursor-pointer hover:scale-105 active:scale-90"
-              onClick={() => setIsLinksModalOpen(true)}
-            >
-              <img
-                src={
-                  darkMode
-                    ? "https://www.sharyap.com/_next/image?url=%2Fimages%2Ficon_links_dark.webp&w=128&q=75"
-                    : "https://www.sharyap.com/_next/image?url=%2Fimages%2Ficon_links.webp&w=128&q=75"
-                }
-                alt="Links"
-                className="w-16 h-16 drop-shadow-[0_5px_0_rgba(0,0,0,0.2)]"
-              />
-              <span
-                className={`mt-1  font-body text-base ${
-                  darkMode ? "text-[#fff]" : "text-[#424242]"
-                }`}
-              >
-                links
-              </span>
-            </div>
-
-            {/* Work */}
-            <div
-              className="flex flex-col items-center duration-250 cursor-pointer hover:scale-105 active:scale-90"
-              onClick={() => setIsWorksModalOpen(true)}
-            >
-              <img
-                src={
-                  darkMode
-                    ? "https://www.sharyap.com/_next/image?url=%2Fimages%2Ficon_work_dark.webp&w=128&q=75"
-                    : "https://www.sharyap.com/_next/image?url=%2Fimages%2Ficon_work.webp&w=128&q=75"
-                }
-                alt="Work"
-                className="w-16 h-16 drop-shadow-[0_5px_0_rgba(0,0,0,0.2)]"
-              />
-              <span
-                className={`mt-1  font-body text-base ${
-                  darkMode ? "text-[#fff]" : "text-[#424242]"
-                }`}
-              >
-                work
-              </span>
-            </div>
-
-            {/* FAQ */}
-            <div
-              className="flex flex-col items-center duration-250 cursor-pointer hover:scale-105 active:scale-90"
-              onClick={() => setIsFAQModalOpen(true)}
-            >
-              <img
-                src={
-                  darkMode
-                    ? "https://www.sharyap.com/_next/image?url=%2Fimages%2Ficon_faq_dark.webp&w=128&q=75"
-                    : "https://www.sharyap.com/_next/image?url=%2Fimages%2Ficon_faq.webp&w=128&q=75"
-                }
-                alt="FAQ"
-                className="w-16 h-16 drop-shadow-[0_5px_0_rgba(0,0,0,0.2)]"
-              />
-              <span
-                className={`mt-1  font-body text-base ${
-                  darkMode ? "text-[#fff]" : "text-[#424242]"
-                }`}
-              >
-                faq
-              </span>
-            </div>
-
-            {/* Contact */}
-            <div
-              className="flex flex-col items-center duration-250 cursor-pointer hover:scale-105 active:scale-90"
-              onClick={() => setIsContactModalOpen(true)}
-            >
-              <img
-                src={
-                  darkMode
-                    ? "https://www.sharyap.com/_next/image?url=%2Fimages%2Ficon_contact_dark.webp&w=128&q=75"
-                    : "https://www.sharyap.com/_next/image?url=%2Fimages%2Ficon_contact.webp&w=128&q=75"
-                }
-                alt="Contact"
-                className="w-16 h-16 drop-shadow-[0_5px_0_rgba(0,0,0,0.2)]"
-              />
-              <span
-                className={`mt-1  font-body text-base ${
-                  darkMode ? "text-[#fff]" : "text-[#424242]"
-                }`}
-              >
-                contact
-              </span>
-            </div>
+                <img
+                  src={darkMode ? button.darkIcon : button.lightIcon}
+                  alt={button.alt}
+                  className="w-16 h-16 drop-shadow-[0_5px_0_rgba(0,0,0,0.2)]"
+                />
+                <span
+                  className={`mt-1 font-body text-base ${
+                    darkMode ? "text-[#fff]" : "text-[#424242]"
+                  }`}
+                >
+                  {button.label}
+                </span>
+              </div>
+            ))}
           </div>
         </div>
       </div>
+
+      {/* Modals */}
       <AboutModal
         isOpen={isAboutModalOpen}
         onClose={() => setIsAboutModalOpen(false)}
