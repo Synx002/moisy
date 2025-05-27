@@ -52,7 +52,11 @@ const AboutModal: React.FC<AboutModalProps> = ({
             }`}
           >
             {/* Profile section - sticky */}
-            <div className="flex p-[32px] pl-[60px]">
+            <div
+              className={`flex p-[32px] pl-[60px] border-b-1  ${
+                darkMode ? "border-[#afafaf]" : "border-[#a4a4a4]"
+              }`}
+            >
               {/* Profile image */}
               <div className="mr-8">
                 <img
@@ -79,7 +83,7 @@ const AboutModal: React.FC<AboutModalProps> = ({
 
             {/* Bio section - scrollable */}
             <div className="mr-1 mb-1 pl-[60px] overflow-y-auto flex-grow">
-              <p className="mb-4">hi! i'm Syam, an web developer. i...</p>
+              <p className="mb-4 mt-2">hi! i'm Syam, an web developer. i...</p>
 
               <ul className="list-disc pl-6 space-y-2">
                 <li className="">create website wireframes, and</li>

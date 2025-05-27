@@ -1,4 +1,6 @@
 import React, { useState, useRef } from "react";
+import { FaChevronUp, FaChevronDown } from "react-icons/fa";
+
 import Draggable from "react-draggable";
 
 interface FAQModalProps {
@@ -172,7 +174,7 @@ const FAQModal: React.FC<FAQModalProps> = ({ isOpen, onClose, darkMode }) => {
 
           {/* Content area with fixed height scroll */}
           <div
-            className={`flex flex-col p-4 rounded-b-lg h-[400px] overflow-y-auto ${
+            className={`flex flex-col p-6 rounded-b-lg h-[400px] overflow-y-auto ${
               darkMode
                 ? "bg-[#132135] text-white border-[#fff] border-2"
                 : "bg-white text-[#424242] border-2 border-t-0 border-[#a4a4a4]"
@@ -185,19 +187,25 @@ const FAQModal: React.FC<FAQModalProps> = ({ isOpen, onClose, darkMode }) => {
                 className="mb-4 rounded-sm border-1 border-[#fff8e0]"
               >
                 <div
-                  className="flex justify-between items-center p-4 bg-[#fff8e0] cursor-pointer rounded"
+                  className={`flex justify-between items-center p-4 cursor-pointer rounded ${
+                    darkMode ? "bg-[#3f80bd]" : "bg-[#fff8e0]"
+                  }`}
                   onClick={() => toggleItem(item.id)}
                 >
                   <span className="font-semibold text-base font-roboto-mono text-gray">
                     {item.question}
                   </span>
                   <span className="text-gray">
-                    {expandedItems[item.id] ? "▲" : "▼"}
+                    {expandedItems[item.id] ? (
+                      <FaChevronUp />
+                    ) : (
+                      <FaChevronDown />
+                    )}
                   </span>
                 </div>
 
                 {expandedItems[item.id] && (
-                  <div className="mt-2 ml-2 text-base font-zen-kaku">
+                  <div className="m-3 text-base font-zen-kaku">
                     {item.answer}
                   </div>
                 )}

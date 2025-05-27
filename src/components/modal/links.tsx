@@ -95,7 +95,7 @@ const LinksModal: React.FC<LinksModalProps> = ({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center font-zen-kaku">
+    <div className="fixed inset-0 z-50 flex items-center justify-center">
       <Draggable
         nodeRef={nodeRef}
         handle=".modal-handle"
@@ -111,10 +111,10 @@ const LinksModal: React.FC<LinksModalProps> = ({
               darkMode ? "bg-[#171717] border-2 border-b-0" : "bg-[#424242]"
             }`}
           >
-            <span className="text-xl ml-2 font-robot-mono">links</span>
+            <span className="text-xl ml-2 font-roboto-mono">links</span>
             <button
               onClick={onClose}
-              className="font-robot-mono flex items-center justify-center text-white text-base
+              className="font-roboto-mono flex items-center justify-center text-white text-base
               duration-100 hover:scale-110 active:scale-80 z-10"
             >
               [x]
@@ -142,7 +142,7 @@ const LinksModal: React.FC<LinksModalProps> = ({
                   <div className="mb-2">
                     {darkMode ? link.darkIcon : link.icon}
                   </div>
-                  <span className="text-base font-robot-mono font-bold">
+                  <span className="text-base font-roboto-mono ">
                     {link.name}
                   </span>
                 </a>
@@ -151,7 +151,7 @@ const LinksModal: React.FC<LinksModalProps> = ({
 
             {/* Footer message */}
             <div
-              className={`mt-8 text-center p-4 border-1 rounded-md text-sm  ${
+              className={`mt-8 text-center p-4 border-1 rounded-md font-zen-kaku text-sm  ${
                 darkMode
                   ? "border-white text-white"
                   : "border-gray-lighter text-gray"

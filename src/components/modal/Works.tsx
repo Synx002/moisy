@@ -100,7 +100,7 @@ const WorkModal: React.FC<WorkModalProps> = ({ isOpen, onClose, darkMode }) => {
       >
         <div
           ref={nodeRef as React.RefObject<HTMLDivElement>}
-          className="w-[800px] shadow-lg overflow-hidden"
+          className="w-[850px] shadow-lg overflow-hidden"
         >
           {/* Header bar */}
           <div
@@ -108,7 +108,7 @@ const WorkModal: React.FC<WorkModalProps> = ({ isOpen, onClose, darkMode }) => {
               darkMode ? "bg-[#171717] border-2 border-b-0" : "bg-[#424242]"
             }`}
           >
-            <span className="text-xl ml-2 font-roboto-mono">work</span>
+            <span className="text-xl ml-2 font-roboto-mono">works</span>
             <button
               onClick={onClose}
               className="font-roboto-mono flex items-center justify-center text-white text-base
@@ -148,10 +148,10 @@ const WorkModal: React.FC<WorkModalProps> = ({ isOpen, onClose, darkMode }) => {
                   {devSkills.map((skill, index) => (
                     <span
                       key={index}
-                      className={`inline-block px-3 py-1 rounded-lg text-sm ${
+                      className={`inline-block px-2 py-2 rounded-md text-base border-1 hover:translate-y-[2px] ${
                         darkMode
-                          ? "bg-gray-700 text-white"
-                          : "bg-gray-100 text-gray-700"
+                          ? "bg-[#171717] text-white border-white drop-shadow-[0_5px_0_rgba(255,255,255,0.2)]"
+                          : "bg-white text-[#424242] border-[#f5f5f5] drop-shadow-[0_5px_0_rgba(0,0,0,0.2)]"
                       }`}
                     >
                       {skill.name}
@@ -169,10 +169,10 @@ const WorkModal: React.FC<WorkModalProps> = ({ isOpen, onClose, darkMode }) => {
                   {tools.map((tool, index) => (
                     <span
                       key={index}
-                      className={`inline-block px-3 py-1 rounded-lg text-sm ${
+                      className={`inline-block px-2 py-2 rounded-md text-base border-1 hover:translate-y-[2px]  ${
                         darkMode
-                          ? "bg-gray-700 text-white"
-                          : "bg-gray-100 text-gray-700"
+                          ? "bg-[#171717] text-white border-white drop-shadow-[0_5px_0_rgba(255,255,255,0.2)]"
+                          : "bg-white text-[#424242] border-[#f5f5f5] drop-shadow-[0_5px_0_rgba(0,0,0,0.2)]"
                       }`}
                     >
                       {tool.name}
