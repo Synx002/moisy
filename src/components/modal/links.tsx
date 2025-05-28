@@ -40,7 +40,7 @@ const LinksModal: React.FC<LinksModalProps> = ({
         />
       ),
       darkIcon: <FaGithub size={60} />,
-      url: "https://twitter.com/yourusername",
+      url: "https://github.com/Synx002",
     },
     {
       name: "Youtube",
@@ -52,7 +52,7 @@ const LinksModal: React.FC<LinksModalProps> = ({
         />
       ),
       darkIcon: <FaYoutube size={60} />,
-      url: "https://youtube.com/c/yourusername",
+      url: "https://www.youtube.com/@synxularity",
     },
     {
       name: "Linkedin",
@@ -64,7 +64,7 @@ const LinksModal: React.FC<LinksModalProps> = ({
         />
       ),
       darkIcon: <FaLinkedin size={60} />,
-      url: "https://ko-fi.com/yourusername",
+      url: "https://www.linkedin.com/in/mohammadsyam/",
     },
     {
       name: "discord",
@@ -88,7 +88,7 @@ const LinksModal: React.FC<LinksModalProps> = ({
         />
       ),
       darkIcon: <FaInstagram size={60} />,
-      url: "https://instagram.com/yourusername",
+      url: "https://www.instagram.com/syam02__/",
     },
   ];
 

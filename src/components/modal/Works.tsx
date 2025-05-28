@@ -1,5 +1,9 @@
 import React, { useRef } from "react";
 import Draggable from "react-draggable";
+import tekadHero from "../../assets/tekadHero.png";
+import kaboHero from "../../assets/kaboHero.png";
+import myTaxHero from "../../assets/myTaxHero.png";
+import daikhHero from "../../assets/daikhHero.png";
 
 interface WorkModalProps {
   isOpen: boolean;
@@ -53,8 +57,7 @@ const WorkModal: React.FC<WorkModalProps> = ({ isOpen, onClose, darkMode }) => {
         "my sibling had this awesome idea for a digital comic agency, so naturally i got roped into building the website 😅 now it’s live and full of artsy comic energy!",
       extraInfo:
         "all the web dev magic (aka: coding, debugging, crying at 2am) was done by me! super proud of how it turned out 💻✨.",
-      imageUrl:
-        "https://www.sharyap.com/_next/image?url=%2Fimages%2FdevProjects%2Fcover.webp&w=640&q=75", // Ganti dengan path aktual
+      imageUrl: tekadHero,
       webUrl: "https://synx002.github.io/tekadverse-2024/",
     },
     {
@@ -63,8 +66,7 @@ const WorkModal: React.FC<WorkModalProps> = ({ isOpen, onClose, darkMode }) => {
         "my very first job experience! i didn’t build the whole thing, but i do keep the website alive and looking fresh ✨ mostly handling UI stuff and squashing bugs before they bite 🐛💥",
       extraInfo:
         "this is where i learned the joys of ‘maintenance mode’—aka reading someone else’s code and trying not to cry. UI updates? done. weird layout bugs? also done. proud to be part of it!",
-      imageUrl:
-        "https://www.sharyap.com/_next/image?url=%2Fimages%2FdevProjects%2Fcover.webp&w=640&q=75",
+      imageUrl: myTaxHero,
       webUrl: "https://mytax.co.id/",
     },
     {
@@ -73,8 +75,7 @@ const WorkModal: React.FC<WorkModalProps> = ({ isOpen, onClose, darkMode }) => {
         "started with a template, gave it a glow-up ✨ helped build and update the UI for this stylish site—now it looks way cooler than it did before 😎",
       extraInfo:
         "no shame in the template game! i tweaked, tuned, and transformed the design to match the brand's vibe. lots of UI polishing, color picking, and the occasional css battle 💅💻",
-      imageUrl:
-        "https://www.sharyap.com/_next/image?url=%2Fimages%2FdevProjects%2Fcover.webp&w=640&q=75",
+      imageUrl: daikhHero,
       webUrl: "https://daikhnco.com/",
     },
     {
@@ -83,8 +84,7 @@ const WorkModal: React.FC<WorkModalProps> = ({ isOpen, onClose, darkMode }) => {
         "my very first freelance gig! built it with WordPress + sprinkled in some GSAP magic for smooth animations ✨ it used to look super slick... until they changed the UI 😢",
       extraInfo:
         "i was in charge of the full setup and animation work—learned a lot about client work, WordPress quirks, and how to make things move nicely on scroll. it’s changed since, but hey, it was mine once!",
-      imageUrl:
-        "https://www.sharyap.com/_next/image?url=%2Fimages%2FdevProjects%2Fcover.webp&w=640&q=75",
+      imageUrl: kaboHero,
       webUrl: "https://kabo.id/",
     },
   ];
@@ -198,7 +198,7 @@ const WorkModal: React.FC<WorkModalProps> = ({ isOpen, onClose, darkMode }) => {
                       <img
                         src={project.imageUrl}
                         alt={project.title}
-                        className="w-[180px] md:w-[220px] rounded-lg"
+                        className="w-[180px] h-[180px] md:w-[220px] rounded-lg object-cover "
                       />
                     </div>
 
@@ -216,7 +216,7 @@ const WorkModal: React.FC<WorkModalProps> = ({ isOpen, onClose, darkMode }) => {
                         </p>
                       </div>
 
-                      <div className="mt-4">
+                      <div className="mt-6 text-center">
                         <a
                           href={project.webUrl}
                           target="_blank"
@@ -229,6 +229,28 @@ const WorkModal: React.FC<WorkModalProps> = ({ isOpen, onClose, darkMode }) => {
                   </div>
                 ))}
               </div>
+            </div>
+            {/* Other Project*/}
+            <div>
+              <p className="mt-5 text-xl font-semibold">Other dev projects:</p>
+              <ul className="py-5 list-disc pl-6 text-lg">
+                <li>This Website!</li>
+                <li>
+                  that's it for now, there are some more projects i'm working on
+                  in the background that i'll release soon :)
+                </li>
+              </ul>
+            </div>
+            <div className="mt-1">
+              see more on&nbsp;
+              <a
+                href="https://github.com/Synx002"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline font-bold text-[#f59300] hover:text-[#c0faff] transition-colors duration-300"
+              >
+                GitHub
+              </a>
             </div>
           </div>
         </div>
