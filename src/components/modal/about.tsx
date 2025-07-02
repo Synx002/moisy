@@ -1,5 +1,8 @@
 import React, { useRef } from "react";
 import Draggable from "react-draggable";
+import synxIcon from "../../assets/synx-icon.png";
+import useSound from "use-sound";
+import closeClick from "../../assets/sounds/close.mp3";
 
 interface AboutModalProps {
   isOpen: boolean;
@@ -13,6 +16,15 @@ const AboutModal: React.FC<AboutModalProps> = ({
   darkMode,
 }) => {
   const nodeRef = useRef<HTMLDivElement>(null) as React.RefObject<HTMLElement>;
+
+  const [playCloseClick] = useSound(closeClick, {
+    volume: 1,
+  });
+
+  const handleClose = () => {
+    playCloseClick();
+    onClose();
+  };
 
   if (!isOpen) return null;
 
@@ -35,7 +47,7 @@ const AboutModal: React.FC<AboutModalProps> = ({
           >
             <span className="text-xl ml-2 font-roboto-mono">about</span>
             <button
-              onClick={onClose}
+              onClick={handleClose}
               className="absolute font-roboto-mono flex items-center justify-center text-white text-xl right-0 mr-6 py-3 
     duration-100 hover:scale-110 active:scale-80 z-10"
             >
@@ -60,8 +72,8 @@ const AboutModal: React.FC<AboutModalProps> = ({
               {/* Profile image */}
               <div className="mr-8">
                 <img
-                  src="https://www.sharyap.com/_next/image?url=%2Fimages%2Favatar.webp&w=640&q=75"
-                  alt="Sharlene Yap"
+                  src={synxIcon}
+                  alt="About Image"
                   className="h-auto rounded-full object-cover w-(--avatar-width) duration-250 hover:scale-105"
                 />
               </div>

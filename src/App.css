@@ -3,12 +3,14 @@
   --froggert-width: 150px;
 
   /* Light mode variables */
+  --primary-color: #f59300;
   --bg-color-light: #f9fafb;
   --text-color-light: #1f2937;
   --social-icon-color-light: #4b5563;
   --copyright-color-light: #6b7280;
 
   /* Dark mode variables */
+  --primary-color-dark: #c0faff;
   --bg-color-dark: #171717;
   --text-color-dark: #f3f4f6;
   --social-icon-color-dark: #e5e7eb;
@@ -41,6 +43,9 @@ body {
 
 .text-primary {
   color: #f59300;
+}
+.text-primary-dark {
+  color: #c0faff;
 }
 
 /* Container styles */

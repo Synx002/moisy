@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import Draggable from "react-draggable";
+import synxIconEnvelope from "../../assets/synx-icon-envelope.png";
 
 interface ContactModalProps {
   isOpen: boolean;
@@ -60,7 +61,7 @@ const ContactModal: React.FC<ContactModalProps> = ({
 
             {/* Gambar karakter (gunakan image lokal atau url) */}
             <img
-              src="https://www.sharyap.com/_next/image?url=%2Fimages%2Femail_graphic.webp&w=384&q=75" // Ganti ini sesuai path image kamu
+              src={synxIconEnvelope} // Ganti ini sesuai path image kamu
               alt="Mail Character"
               className="w-60 mx-auto"
             />

@@ -83,7 +83,7 @@ const Footer: React.FC = () => {
             </button>
           </div>
         </div>
-        <div className="flex absolute w-screen bottom-5 bg-transparent hidden md:flex justify-center">
+        <div className="absolute w-screen bottom-5 bg-transparent hidden md:flex justify-center">
           <div>
             <button className="pointer-events-auto relative rounded-md duration-250 cursor-pointer h-12 w-12 hover:scale-105 active:scale-90">
               <div className="flex justify-center">

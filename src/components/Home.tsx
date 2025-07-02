@@ -1,10 +1,12 @@
 import { useContext, useState } from "react";
+import useSound from "use-sound";
 import AboutModal from "../components/modal/About";
 import LinksModal from "../components/modal/Links";
 import WorksModal from "../components/modal/Works";
 import FAQModal from "../components/modal/Faq";
 import ContactModal from "../components/modal/Contact";
 import { ThemeContext } from "../context/ThemeContext";
+import mouseClick from "../assets/sounds/click-mouse.mp3";
 
 const Home = () => {
   const { darkMode } = useContext(ThemeContext);
@@ -68,8 +70,12 @@ const Home = () => {
     },
   ];
 
+  const [playMouseClick] = useSound(mouseClick, {
+    volume: 0.5,
+  });
+
   return (
-    <div className="flex flex-col justify-center items-center ">
+    <div className="flex-col justify-center items-center hidden md:flex">
       {/* Header */}
       <div
         className={`text-white font-roboto-mono text-xl px-6 py-3 rounded-t-lg w-full max-w-3xl mt-10 ${
@@ -95,7 +101,7 @@ const Home = () => {
             hi!{" "}
             <span
               className={`font-zen-kaku font-bold ${
-                darkMode ? "text-[#c0faff]" : "text-[#f59300]"
+                darkMode ? "text-primary-dark" : "text-primary"
               }`}
             >
               i'm Syam
@@ -110,7 +116,10 @@ const Home = () => {
           </p>
 
           {/* Icon buttons - refactored */}
-          <div className="flex flex-wrap justify-center gap-8 font-roboto-mono font-bold">
+          <div
+            className="flex flex-wrap justify-center gap-8 font-roboto-mono font-bold"
+            onClick={playMouseClick}
+          >
             {iconButtons.map((button) => (
               <div
                 key={button.id}

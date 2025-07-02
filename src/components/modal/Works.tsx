@@ -4,6 +4,9 @@ import tekadHero from "../../assets/tekadHero.png";
 import kaboHero from "../../assets/kaboHero.png";
 import myTaxHero from "../../assets/myTaxHero.png";
 import daikhHero from "../../assets/daikhHero.png";
+import useSound from "use-sound";
+import closeClick from "../../assets/sounds/close.mp3";
+import bubblePop from "../../assets/sounds/bubble-pop.mp3";
 
 interface WorkModalProps {
   isOpen: boolean;
@@ -89,6 +92,19 @@ const WorkModal: React.FC<WorkModalProps> = ({ isOpen, onClose, darkMode }) => {
     },
   ];
 
+  const [playCloseClick] = useSound(closeClick, {
+    volume: 1,
+  });
+
+  const [play, { stop }] = useSound(bubblePop, {
+    volume: 0.2,
+  });
+
+  const handleClose = () => {
+    playCloseClick();
+    onClose();
+  };
+
   if (!isOpen) return null;
 
   return (
@@ -110,7 +126,7 @@ const WorkModal: React.FC<WorkModalProps> = ({ isOpen, onClose, darkMode }) => {
           >
             <span className="text-xl ml-2 font-roboto-mono">works</span>
             <button
-              onClick={onClose}
+              onClick={handleClose}
               className="font-roboto-mono flex items-center justify-center text-white text-base
               duration-100 hover:scale-110 active:scale-80 z-10"
             >
@@ -138,7 +154,7 @@ const WorkModal: React.FC<WorkModalProps> = ({ isOpen, onClose, darkMode }) => {
             </div>
 
             {/* Two-column layout for Tools and Development */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 cursor-pointer">
               {/* Development column */}
               <div>
                 <h2 className="text-xl font-roboto-mono uppercase mb-4 font-bold">
@@ -148,6 +164,12 @@ const WorkModal: React.FC<WorkModalProps> = ({ isOpen, onClose, darkMode }) => {
                   {devSkills.map((skill, index) => (
                     <span
                       key={index}
+                      onMouseEnter={() => {
+                        play();
+                      }}
+                      onMouseLeave={() => {
+                        stop();
+                      }}
                       className={`inline-block px-2 py-2 rounded-md text-base border-1 hover:translate-y-[2px] ${
                         darkMode
                           ? "bg-[#171717] text-white border-white drop-shadow-[0_5px_0_rgba(255,255,255,0.2)]"
@@ -169,6 +191,12 @@ const WorkModal: React.FC<WorkModalProps> = ({ isOpen, onClose, darkMode }) => {
                   {tools.map((tool, index) => (
                     <span
                       key={index}
+                      onMouseEnter={() => {
+                        play();
+                      }}
+                      onMouseLeave={() => {
+                        stop();
+                      }}
                       className={`inline-block px-2 py-2 rounded-md text-base border-1 hover:translate-y-[2px]  ${
                         darkMode
                           ? "bg-[#171717] text-white border-white drop-shadow-[0_5px_0_rgba(255,255,255,0.2)]"
