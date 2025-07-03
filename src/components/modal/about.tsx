@@ -80,13 +80,22 @@ const AboutModal: React.FC<AboutModalProps> = ({
 
               {/* Name and title */}
               <div className="flex flex-col justify-center">
-                <h2 className="text-3xl font-semibold text-[#f59300]">
+                <h2
+                  className={`text-3xl font-semibold ${
+                    darkMode ? "text-primary-dark" : "text-primary"
+                  }`}
+                >
                   Mohammad Syam
                 </h2>
                 <p className="mb-1">ID-based freelance web developer</p>
                 <p className="">
                   Available for colaboration and{" "}
-                  <a href="#" className="text-[#f59300] hover:underline">
+                  <a
+                    href="#"
+                    className={`hover:underline ${
+                      darkMode ? "text-primary-dark" : "text-primary"
+                    }`}
+                  >
                     Fulltime job
                   </a>
                 </p>
@@ -106,7 +115,9 @@ const AboutModal: React.FC<AboutModalProps> = ({
                 interested in working with me? send me an email at{" "}
                 <a
                   href="mailto:mosyam0202@gmail.com"
-                  className="text-[#f59300] hover:underline"
+                  className={`hover:underline ${
+                    darkMode ? "text-primary-dark" : "text-primary"
+                  }`}
                 >
                   mosyam0202@gmail.com
                 </a>
@@ -144,11 +155,22 @@ const AboutModal: React.FC<AboutModalProps> = ({
               <div className="my-2 border-l-4 pl-3 border-[#f5f5f5]">
                 <p>
                   i have native fluency in Indonesian{" "}
-                  <span className="font-bold text-[#f59300]">
+                  <span
+                    className={`font-bold ${
+                      darkMode ? "text-primary-dark" : "text-primary"
+                    }`}
+                  >
                     (Bahasa Indonesia)
                   </span>
                   , and can communicate at an intermediate level in{" "}
-                  <span className="font-bold text-[#f59300]">English</span>!
+                  <span
+                    className={`font-bold ${
+                      darkMode ? "text-primary-dark" : "text-primary"
+                    }`}
+                  >
+                    English
+                  </span>
+                  !
                 </p>
                 <p className="text-sm mt-4">
                   i’m currently polishing my English skills to sound even
