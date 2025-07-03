@@ -1,6 +1,8 @@
 import React, { useRef } from "react";
 import Draggable from "react-draggable";
 import synxIconEnvelope from "../../assets/synx-icon-envelope.png";
+import useSound from "use-sound";
+import closeClick from "../../assets/sounds/close.mp3";
 
 interface ContactModalProps {
   isOpen: boolean;
@@ -14,6 +16,15 @@ const ContactModal: React.FC<ContactModalProps> = ({
   darkMode,
 }) => {
   const nodeRef = useRef<HTMLDivElement>(null);
+
+  const [playCloseClick] = useSound(closeClick, {
+    volume: 1,
+  });
+
+  const handleClose = () => {
+    playCloseClick();
+    onClose();
+  };
 
   if (!isOpen) return null;
 
@@ -37,7 +48,7 @@ const ContactModal: React.FC<ContactModalProps> = ({
           >
             <span className="text-xl">contact</span>
             <button
-              onClick={onClose}
+              onClick={handleClose}
               className="font-roboto-mono flex items-center justify-center text-white text-base hover:scale-110 duration-100"
             >
               [x]

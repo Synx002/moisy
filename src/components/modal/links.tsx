@@ -7,6 +7,8 @@ import {
   FaInstagram,
   FaLinkedin,
 } from "react-icons/fa";
+import useSound from "use-sound";
+import closeClick from "../../assets/sounds/close.mp3";
 
 interface LinksModalProps {
   isOpen: boolean;
@@ -92,6 +94,15 @@ const LinksModal: React.FC<LinksModalProps> = ({
     },
   ];
 
+  const [playCloseClick] = useSound(closeClick, {
+    volume: 1,
+  });
+
+  const handleClose = () => {
+    playCloseClick();
+    onClose();
+  };
+
   if (!isOpen) return null;
 
   return (
@@ -113,7 +124,7 @@ const LinksModal: React.FC<LinksModalProps> = ({
           >
             <span className="text-xl ml-2 font-roboto-mono">links</span>
             <button
-              onClick={onClose}
+              onClick={handleClose}
               className="font-roboto-mono flex items-center justify-center text-white text-base
               duration-100 hover:scale-110 active:scale-80 z-10"
             >
