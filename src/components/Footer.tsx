@@ -3,12 +3,10 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FiInstagram } from "react-icons/fi";
 import useSound from "use-sound";
 import { ThemeContext } from "../context/ThemeContext";
-import { SoundContext } from "../context/SoundContext";
 import backgroundMusic from "../assets/sounds/bgm.mp3";
 
 const Footer: React.FC = () => {
   const { darkMode } = useContext(ThemeContext);
-  const { soundEnabled } = useContext(SoundContext);
 
   // State lokal untuk mengontrol background music
   const [musicEnabled, setMusicEnabled] = useState(false);

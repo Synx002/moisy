@@ -143,10 +143,21 @@ const WorkModal: React.FC<WorkModalProps> = ({ isOpen, onClose, darkMode }) => {
             }`}
           >
             {/* Email info section */}
-            <div className="bg-amber-50 p-4 rounded mb-6">
+            <div
+              className={`p-4 rounded mb-6 ${
+                darkMode ? "bg-[#3f80bd]" : "bg-[#fff8e0]"
+              }`}
+            >
               <p className="text-black">
                 Accepting work offers via my{" "}
-                <span className="text-amber-600 font-medium">work email</span>!
+                <span
+                  className={`font-medium ${
+                    darkMode ? "text-primary-dark" : "text-primary"
+                  }`}
+                >
+                  work email
+                </span>
+                !
               </p>
               <p className="text-black">
                 I do web design and web/app development. :)
@@ -233,7 +244,11 @@ const WorkModal: React.FC<WorkModalProps> = ({ isOpen, onClose, darkMode }) => {
                     {/* Konten teks */}
                     <div className="flex flex-col justify-between">
                       <div>
-                        <h3 className="text-2xl text-amber-600 font-bold">
+                        <h3
+                          className={`text-2xl font-bold ${
+                            darkMode ? "text-primary-dark" : "text-primary"
+                          }`}
+                        >
                           {project.title}
                         </h3>
                         <p className="mt-2 text-sm md:text-base">
@@ -248,9 +263,10 @@ const WorkModal: React.FC<WorkModalProps> = ({ isOpen, onClose, darkMode }) => {
                         <a
                           href={project.webUrl}
                           target="_blank"
-                          className="bg-amber-100 text-amber-600 px-4 py-2 rounded font-semibold text-sm hover:bg-amber-200"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 bg-amber-100 text-amber-700 px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-amber-200 hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg"
                         >
-                          visit
+                          ✨ Visit Site
                         </a>
                       </div>
                     </div>
@@ -275,7 +291,9 @@ const WorkModal: React.FC<WorkModalProps> = ({ isOpen, onClose, darkMode }) => {
                 href="https://github.com/Synx002"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="underline font-bold text-[#f59300] hover:text-[#c0faff] transition-colors duration-300"
+                className={`underline font-bold ${
+                  darkMode ? "text-primary-dark" : "text-primary"
+                }`}
               >
                 GitHub
               </a>
