@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import useSound from "use-sound";
-import AboutModal from "../components/modal/About";
-import LinksModal from "../components/modal/Links";
+import AboutModal from "../components/modal/about";
+import LinksModal from "../components/modal/links";
 import WorksModal from "../components/modal/Works";
 import FAQModal from "../components/modal/Faq";
 import ContactModal from "../components/modal/Contact";
